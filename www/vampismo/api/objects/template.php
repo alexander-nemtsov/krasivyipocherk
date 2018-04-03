@@ -1,16 +1,14 @@
 <?php
-class Task{
+class Template{
  
     // database connection and table name
     private $conn;
-    private $table_name = "tasks";
+    private $table_name = "templates";
  
     // object properties
     public $id;
     public $name;
-    public $description;
-    public $created;
-	public $template_id;
+	public $text;
  
     // constructor with $db as database connection
     public function __construct($db){
