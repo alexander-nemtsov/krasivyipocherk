@@ -7,6 +7,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "api/config/database.php",
+			"settings":
+			{
+				"buffer_size": 666,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "api/objects/product.php",
+			"settings":
+			{
+				"buffer_size": 5680,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -40,10 +58,21 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Projects/krasivyipocherk"
+		"/C/Projects/krasivyipocherk",
+		"/C/Projects/krasivyipocherk/api",
+		"/C/Projects/krasivyipocherk/api/config",
+		"/C/Projects/krasivyipocherk/api/objects",
+		"/C/Projects/krasivyipocherk/api/product",
+		"/C/Projects/krasivyipocherk/app"
 	],
 	"file_history":
 	[
+		"/C/Projects/krasivyipocherk/api/product/search.php",
+		"/C/Projects/krasivyipocherk/api/product/update.php",
+		"/C/Projects/krasivyipocherk/api/product/delete.php",
+		"/C/Projects/krasivyipocherk/api/product/read_one.php",
+		"/C/Projects/krasivyipocherk/api/product/create.php",
+		"/C/Projects/krasivyipocherk/api/product/read.php",
 		"/C/Users/Alexander_Nemtsov/Downloads/TenantRegistrationConfirmationEmail.html",
 		"/C/Users/Alexander_Nemtsov/Desktop/xlsm/xl/worksheets/sheet6.xml",
 		"/C/Users/Alexander_Nemtsov/Desktop/xlsm/xl/worksheets/sheet5.xml",
@@ -87,8 +116,65 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "api/config/database.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								666,
+								666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "api/objects/product.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4814,
+								4814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2751.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -98,7 +184,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{

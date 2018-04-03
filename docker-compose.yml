@@ -1,61 +1,48 @@
 version: '2'
 services:
     nginx:
-      # РёСЃРїРѕР»СЊР·СѓРµРј РїРѕСЃР»РµРґРЅРёР№ СЃС‚Р°Р±РёР»СЊРЅС‹Р№ РѕР±СЂР°Р· nginx
+        # используем последний стабильный образ nginx
         image: nginx:latest
-        # РјР°СЂС€СЂСѓС‚РёР·РёСЂСѓРµРј РїРѕСЂС‚С‹
+        # маршрутизируем порты
         ports:
-            - "8000:80"
-        # РјРѕРЅС‚РёСЂСѓРµРј РґРёСЂРµРєС‚РѕСЂРёРё, СЃР»РµРІР° РґРёСЂРµРєС‚РѕСЂРёРё РЅР° РѕСЃРЅРѕРІРЅРѕР№ РјР°С€РёРЅРµ, СЃРїСЂР°РІР° - РєСѓРґР° РѕРЅРё РјРѕРЅС‚РёСЂСѓСЋС‚СЃСЏ РІ РєРѕРЅС‚РµР№РЅРµСЂРµ
+            - "80:80"
+            - "443:443"
+        # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
         volumes:
             - ./hosts:/etc/nginx/conf.d
             - ./www:/var/www
             - ./logs:/var/log/nginx
-        # nginx РґРѕР»Р¶РµРЅ РѕР±С‰Р°С‚СЊСЃСЏ СЃ php РєРѕРЅС‚РµР№РЅРµСЂРѕРј
+        # nginx должен общаться с php контейнером
         links:
             - php
     php:
-        # Сѓ РЅР°СЃ СЃРІРѕР№ РѕР±СЂР°Р· РґР»СЏ PHP, СѓРєР°Р·С‹РІР°РµРј РїСѓС‚СЊ Рє РЅРµРјСѓ Рё РіРѕРІРѕСЂРёРј С‡С‚Рѕ РµРіРѕ РЅР°РґРѕ СЃРѕР±СЂР°С‚СЊ
+        # у нас свой образ для PHP, указываем путь к нему и говорим что его надо собрать
         build: ./images/php
-        # СЌС‚РѕС‚ РѕР±СЂР°Р· Р±СѓРґРµС‚ РѕР±С‰Р°С‚СЊСЃСЏ СЃ mysql
+        # этот образ будет общаться с mysql
         links:
             - mysql
-        # РјРѕРЅС‚РёСЂСѓРµРј РґРёСЂРµРєС‚РѕСЂРёСЋ СЃ РїСЂРѕРµРєС‚Р°РјРё
+        # монтируем директорию с проектами
         volumes:
             - ./www:/var/www
-    db:
-       image: mariadb
+    mysql:
+       image: mariadb:10.3
+       # volumes:
+       #     - ./mysql:/var/lib/mysql
        ports:
            - "3306:3306"
-       volumes:
-           - ./mysql:/var/lib/mysql
-       # Р·Р°РґР°РµРј РїР°СЂРѕР»СЊ РґР»СЏ root РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+       # задаем пароль для root пользователя
        environment:
-            MYSQL_ROOT_PASSWORD: secret
-	pma:
-      # РёСЃРїРѕР»СЊР·СѓРµРј РїРѕСЃР»РµРґРЅРёР№ СЃС‚Р°Р±РёР»СЊРЅС‹Р№ РѕР±СЂР°Р· phpmyadmin
+            MYSQL_ROOT_PASSWORD: "secret"
+    pma:
+        # используем последний стабильный образ phpmyadmin
         image: phpmyadmin/phpmyadmin
-        restart: always
         links:
-            - mysql:mysql
+            - mysql
+        restart: always
         ports:
-            - 8183:80
+            - "8080:80"
         environment:
-            # РїСЂРѕРїРёСЃС‹РІР°РµРј РЅР°Р·РІР°РЅРёРµ РЅР°С€РµРіРѕ MySQL С…РѕСЃС‚Р°
-            PMA_HOST: mysql
-            MYSQL_USERNAME: root
-            MYSQL_ROOT_PASSWORD: secret
-
-
-#     db: 
-# 	    image: postgres
-# 	    restart: always
-# 	    volumes:
-# 	    	- ./postgres:/var/lib/postgresql/data
-# 	    environment:
-# 	    	POSTGRES_PASSWORD: secret
-# 	adminer:
-# 	    image: adminer
-# 	    restart: always
-# 	    ports:
-# 	      - 8080:808
+            # прописываем название нашего MySQL хоста
+            PMA_HOST: "mysql"
+            MYSQL_USERNAME: "root"
+            MYSQL_ROOT_PASSWORD: "secret"
