@@ -7,7 +7,7 @@
  */
 
 //Import PHPMailer classes into the global namespace
-use PHPMailer\PHPMailer\PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
 
 require '../vendor/autoload.php';
 
