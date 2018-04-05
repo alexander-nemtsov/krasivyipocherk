@@ -73,10 +73,10 @@ EOT;
     //send the message, check for errors
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
-        $msg = json_encode(array('success' => false))
+        $msg = json_encode(array('success' => false));
     } else {
         echo "Message sent!";
-        $msg = json_encode(array('success' => true))
+        $msg = json_encode(array('success' => true));
     }
 
 }
