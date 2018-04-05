@@ -34,7 +34,7 @@ if (array_key_exists('address', $_POST)) {
     // 0 = off (for production use)
     // 1 = client messages
     // 2 = client and server messages
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 0;
 
     //Set the hostname of the mail server
     $mail->Host = 'smtp.gmail.com';
@@ -72,10 +72,9 @@ EOT;
 
     //send the message, check for errors
     if (!$mail->send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
+//        echo "Mailer Error: " . $mail->ErrorInfo;
         $msg = json_encode(array('success' => false));
     } else {
-        echo "Message sent!";
         $msg = json_encode(array('success' => true));
     }
 
