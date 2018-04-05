@@ -48,11 +48,11 @@ $(document).ready(function() {
       valid = false;
     }
     if($.trim(zipcode.val()) === "") {
-      message.css('border-color', 'red');
+      zipcode.css('border-color', 'red');
       valid = false;
     }
     if($.trim(address.val()) === "") {
-      message.css('border-color', 'red');
+      address.css('border-color', 'red');
       valid = false;
     }
     
