@@ -8,7 +8,7 @@ require '../vendor/autoload.php';
 $msg = '';
 
 //Don't run this unless we're handling a form submission
-if (array_key_exists('email', $_POST)) {
+if (array_key_exists('address', $_POST)) {
     date_default_timezone_set('Etc/UTC');
 
     require '../vendor/autoload.php';
