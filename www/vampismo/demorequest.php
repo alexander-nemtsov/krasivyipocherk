@@ -8,8 +8,8 @@ require '../vendor/autoload.php';
 $msg = '';
 
 
-echo("New Demo Request")
-echo($_POST['address'])
+echo("New Demo Request");
+echo($_POST['address']);
 
 
 //Don't run this unless we're handling a form submission
