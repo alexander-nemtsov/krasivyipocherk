@@ -7,6 +7,11 @@ require '../vendor/autoload.php';
 
 $msg = '';
 
+
+echo("New Demo Request")
+echo($_POST['address'])
+
+
 //Don't run this unless we're handling a form submission
 if (array_key_exists('address', $_POST)) {
     date_default_timezone_set('Etc/UTC');
