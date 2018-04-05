@@ -39,7 +39,7 @@ $(document).ready(function() {
     var valid = true;
 // email regex    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     
-    if($.trim(country.val())) {
+    if($.trim(country.val()) === "" ) {
       country.css('border-color', 'red');
       valid = false;
     }
