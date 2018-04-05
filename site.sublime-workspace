@@ -3,46 +3,26 @@
 	{
 		"selected_items":
 		[
+			[
+				"clien",
+				"client_address"
+			],
+			[
+				"client_",
+				"client_country"
+			],
+			[
+				"filter",
+				"filter_var"
+			],
+			[
+				"json_",
+				"json_encode"
+			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "www/vampismo/api/objects/task.php",
-			"settings":
-			{
-				"buffer_size": 1928,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/vampismo/api/task/update.php",
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/vampismo/api/task/read_one.php",
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/vampismo/api/task/delete.php",
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -56,7 +36,7 @@
 		"selected_items":
 		[
 		],
-		"width": 392.0
+		"width": 412.0
 	},
 	"console":
 	{
@@ -78,23 +58,25 @@
 	[
 		"/C/Projects/krasivyipocherk",
 		"/C/Projects/krasivyipocherk/www",
-		"/C/Projects/krasivyipocherk/www/vampismo",
-		"/C/Projects/krasivyipocherk/www/vampismo/api",
-		"/C/Projects/krasivyipocherk/www/vampismo/api/objects",
-		"/C/Projects/krasivyipocherk/www/vampismo/api/product",
-		"/C/Projects/krasivyipocherk/www/vampismo/api/task",
-		"/C/Projects/krasivyipocherk/www/vampismo/api/template",
-		"/C/Projects/krasivyipocherk/www/vampismo/html"
+		"/C/Projects/krasivyipocherk/www/vampismo"
 	],
 	"file_history":
 	[
+		"/C/Projects/krasivyipocherk/www/vampismo/demorequest.php",
+		"/C/Projects/krasivyipocherk/www/vampismo/testform.html",
+		"/C/Projects/krasivyipocherk/www/vampismo/js.js",
+		"/C/Projects/krasivyipocherk/www/style.css",
+		"/C/Projects/krasivyipocherk/www/vampismo/composer.json",
+		"/C/Projects/krasivyipocherk/www/vampismo/api/task/delete.php",
+		"/C/Projects/krasivyipocherk/www/vampismo/api/task/read_one.php",
+		"/C/Projects/krasivyipocherk/www/vampismo/api/task/update.php",
+		"/C/Projects/krasivyipocherk/www/vampismo/api/objects/task.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/objects/category.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/objects/client.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/task/create.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/objects/product.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/product/create.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/task/read.php",
-		"/C/Projects/krasivyipocherk/www/vampismo/api/objects/task.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/objects/template.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/product/read.php",
 		"/C/Projects/krasivyipocherk/www/vampismo/api/template/read.php",
@@ -154,122 +136,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "www/vampismo/api/objects/task.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1928,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								618,
-								618
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/vampismo/api/task/update.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/vampismo/api/task/read_one.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "www/vampismo/api/task/delete.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
