@@ -51,7 +51,7 @@ $mail->setFrom('alexander.nemtsov@gmail.com', 'Alexander Nemtsov');
 $mail->addReplyTo('alexander.nemtsov@gmail.com', 'Alexaner Nemtsov');
 
 //Set who the message is to be sent to
-$mail->addAddress('altamegilas@mail.ru', 'John Doe');
+$mail->addAddress('alexander.nemtsov@gmail.com', 'Vam Pismo');
 
 //Set the subject line
 $mail->Subject = 'PHPMailer GMail SMTP test';
