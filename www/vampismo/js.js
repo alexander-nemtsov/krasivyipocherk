@@ -16,7 +16,7 @@ $(document).ready(function() {
   submit.on('click', function(e) {
     e.preventDefault();
     if(validate()) {
-	  blockForm(true);
+	    blockSend(true)
       $.ajax({
         type: "POST",
         url: "demorequest.php",
@@ -32,7 +32,7 @@ $(document).ready(function() {
         } else {
           info.html('Could not send mail! Sorry!').css('color', 'red').slideDown();
         }
-        blockForm(false);
+        blockSend(false);
       });
     }
   });
@@ -61,11 +61,9 @@ $(document).ready(function() {
     return valid;
   }
   
-  function blockForm(block) {
-	  country.prop("disabled", block);
-	  name.prop("disabled", block);
-	  zipcode.prop("disabled", block);
-	  address.prop("disabled", block);
+  function blockSend(block) {
+	  $("#submit").value = block ? "Processing..." : "Send";
+	  $("#submit").prop('disabled', block);
   }
 
 });
