@@ -16,6 +16,7 @@ $(document).ready(function() {
   submit.on('click', function(e) {
     e.preventDefault();
     if(validate()) {
+	  blockForm(true);
       $.ajax({
         type: "POST",
         url: "demorequest.php",
@@ -31,6 +32,7 @@ $(document).ready(function() {
         } else {
           info.html('Could not send mail! Sorry!').css('color', 'red').slideDown();
         }
+        blockForm(false);
       });
     }
   });
@@ -57,6 +59,13 @@ $(document).ready(function() {
     }
     
     return valid;
+  }
+  
+  function blockForm(block) {
+	  country.prop("disabled", block);
+	  name.prop("disabled", block);
+	  zipcode.prop("disabled", block);
+	  address.prop("disabled", block);
   }
 
 });
