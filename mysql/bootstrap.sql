@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=19;
 
 
 INSERT INTO `categories` (`id`, `name`, `description`, `created`, `modified`) VALUES
@@ -17,16 +17,16 @@ INSERT INTO `categories` (`id`, `name`, `description`, `created`, `modified`) VA
 (13, 'Sports', 'Drop into new winter gear.', '2016-01-09 02:24:24', '2016-01-09 01:24:24');
 
 
-CREATE TABLE IF NOT EXISTS `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
-  `description` text NOT NULL,
-  `price` decimal(10,0) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65;
+CREATE TABLE IF NOT EXISTS 'products' (
+id int(11) NOT NULL AUTO_INCREMENT,
+name varchar(32) NOT NULL,
+description text NOT NULL,
+price decimal(10,0) NOT NULL,
+category_id int(11) NOT NULL,
+created datetime NOT NULL,
+modified timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=65;
 
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `category_id`, `created`, `modified`) VALUES
