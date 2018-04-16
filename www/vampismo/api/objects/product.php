@@ -18,11 +18,8 @@ class Product{
 	public function __construct($db){
 		$this->conn = $db;
 	}
-	
-	
-	/* 
-		 read products
-	*/
+
+	// read products
 	function read(){
 	 
 		 // select all query
@@ -181,9 +178,9 @@ class Product{
 	
 	// search products
 	function search($keywords){
-	 
-		 // select all query
-		 $query = "SELECT
+	
+		// select all query
+		$query = "SELECT
 					c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
 				FROM
 					" . $this->table_name . " p
@@ -195,27 +192,27 @@ class Product{
 				ORDER BY
 					p.created DESC";
 	 
-		 // prepare query statement
-		 $stmt = $this->conn->prepare($query);
+		// prepare query statement
+		$stmt = $this->conn->prepare($query);
 	 
-		 // sanitize
-		 $keywords=htmlspecialchars(strip_tags($keywords));
-		 $keywords = "%{$keywords}%";
+		// sanitize
+		$keywords=htmlspecialchars(strip_tags($keywords));
+		$keywords = "%{$keywords}%";
+
+		// bind
+		$stmt->bindParam(1, $keywords);
+		$stmt->bindParam(2, $keywords);
+		$stmt->bindParam(3, $keywords);
+
+		// execute query
+		$stmt->execute();
 	 
-		 // bind
-		 $stmt->bindParam(1, $keywords);
-		 $stmt->bindParam(2, $keywords);
-		 $stmt->bindParam(3, $keywords);
-	 
-		 // execute query
-		 $stmt->execute();
-	 
-		 return $stmt;
+		return $stmt;
 	}
 
 	// read products with pagination
-	public function readPaging($from_record_num, $records_per_page){
-	 
+	function readPaging($from_record_num, $records_per_page){
+	
 		// select query
 		$query = "SELECT
 					c.name as category_name, p.id, p.name, p.description, p.price, p.category_id, p.created
@@ -242,7 +239,7 @@ class Product{
 	}
 
 	// used for paging products
-	public function count(){
+	function count(){
 		$query = "SELECT COUNT(*) as total_rows FROM " . $this->table_name . "";
 
 		$stmt = $this->conn->prepare( $query );
